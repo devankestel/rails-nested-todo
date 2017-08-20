@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_completed: false
+  date_completed: 2017-08-20 17:29:20
+
+two:
+  is_completed: false
+  date_completed: 2017-08-20 17:29:20
