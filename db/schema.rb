@@ -23,14 +23,20 @@ ActiveRecord::Schema.define(version: 20170820212956) do
   create_table "completions", force: :cascade do |t|
     t.boolean  "is_completed",   default: false
     t.datetime "date_completed"
+    t.integer  "task_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end
 
+  add_index "completions", ["task_id"], name: "index_completions_on_task_id"
+
   create_table "tasks", force: :cascade do |t|
-    t.string   "title",      default: ""
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "title",       default: ""
+    t.integer  "category_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
+
+  add_index "tasks", ["category_id"], name: "index_tasks_on_category_id"
 
 end
